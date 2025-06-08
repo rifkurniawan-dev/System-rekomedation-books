@@ -1,35 +1,31 @@
 # **Laporan Proyek Machine Learning Terapan 2**
-# **Muhamad Fahmi**
+
 
 ---
 
-# **Detail Laporan : Sistem Rekomendasi buku**
+# **Detail Laporan : System Recommendation Books**
 
 ---
-
-![Image](https://github.com/user-attachments/assets/95458161-0994-4471-a643-d30f3276f18e)
 
 ## Project Overview
 
-Ilmu pengetahuan sangatlah penting bagi umat manusia. Dari ilmu pengetahuan manusia dapat belajar banyak hal dari berbagai sisi kehidupan. Salah satu kunci meningkatkan kualitas hidup manusia adalah mengerti akan ilmu pengetahuan tersebut sehingga manusia perlu untuk belajar apa itu ilmu pengetahuan. Cara mudah untuk mengakses ilmu pengetahuan adalah dengan membaca buku. Dari buku manusia dapat membaca tulisan-tulisan gagasan ilmu dari penulis dalam bentuk cerita naratif, cerita bergambar dan lainnya. Melalui membaca manusia dapat mengerti berbagai hal yang belum dimengerti sebelumnya. 
+Pengetahuan memegang peran krusial dalam kehidupan manusia. Melalui pengetahuan, individu dapat memahami berbagai aspek dalam hidup dan meningkatkan kualitas hidup mereka. Oleh karena itu, memahami dan mempelajari ilmu pengetahuan menjadi hal yang sangat penting. Salah satu cara yang paling mudah dan efektif untuk mengakses pengetahuan adalah melalui buku. Buku menyimpan berbagai pemikiran dan informasi dari penulis yang dikemas dalam bentuk narasi, ilustrasi, maupun bentuk lainnya. Aktivitas membaca memungkinkan seseorang memahami hal-hal yang sebelumnya belum diketahui.
 
-Ada sebuah pernyataan yaitu bahwa buku membuka jendela wawasan manusia namun sayangnya minat membaca buku di Indonesia sangat kecil. Di tingkat internasional, Indonesia memiliki indeks membaca sebesar 0,001 yang artinya setiap seribu orang hanya satu orang yang memiliki minat baca tinggi [[1](https://journal.unesa.ac.id/index.php/jpi/article/view/140)]. Hal ini berbeda jika dibandingkan dengan negara maju seperti Amerika yang memiliki indeks membaca sebesar 0,45 dan Singapura yang memiliki indeks baca 0,55. Terlihat negara maju memiliki masyarakat dengan minat baca yang tinggi sehingga penting sekali meningkatkan minat membaca ini di Indonesia.
+Terdapat ungkapan bahwa buku adalah jendela dunia. Namun kenyataannya, tingkat minat baca masyarakat Indonesia tergolong sangat rendah. Berdasarkan data, indeks literasi Indonesia hanya mencapai 0,001 — artinya dari seribu orang, hanya satu yang memiliki ketertarikan tinggi terhadap aktivitas membaca [1]. Angka ini sangat jauh jika dibandingkan dengan negara-negara maju seperti Amerika Serikat (0,45) dan Singapura (0,55), yang menunjukkan tingginya budaya membaca di negara tersebut. Hal ini menjadi alarm penting bagi Indonesia untuk mendorong peningkatan minat baca.
 
-Kesusahan mencari buku yang menarik untuk dibaca merupakan salah satu kendala seseorang untuk memulai membaca buku. Terdapat banyak jenis buku dengan banyak judul yang siap dibaca. Namun seringkali terlewat begitu saja karena tidak adanya bantuan dalam pemilihan buku tersebut. Hal ini menyebabkan minat seseorang cepat hilang dan menyerah. Maka dari itu diperlukan sebuah sistem pendukung untuk mengatasi permasalahan ini. 
+Salah satu hambatan utama yang dihadapi masyarakat dalam memulai kebiasaan membaca adalah kesulitan dalam menemukan buku yang sesuai dengan minat. Meski banyak pilihan buku tersedia, tanpa panduan atau rekomendasi, calon pembaca sering kali bingung menentukan pilihan. Akibatnya, motivasi membaca pun bisa cepat menghilang. Oleh karena itu, dibutuhkan sebuah sistem yang mampu membantu individu menemukan buku yang relevan dengan preferensi mereka, guna mendorong semangat membaca di kalangan masyarakat. 
 
-Sistem pendukung yang bisa digunakan adalah sistem rekomendasi buku. Sistem rekomendasi buku merupakan sistem yang akan merekomendasikan buku sehingga seseorang dapat lebih mudah mendapatkan informasi tentang buku yang akan dibaca [[2](https://ejournal.akprind.ac.id/index.php/technoscientia/article/view/612)]. Sistem rekomendasi ini dibangun berdasarkan sejarah ulasan dari pembaca lainnya sehingga dapat memberikan judul-judul buku yang menarik untuk dibaca. Sistem rekomendasi buku ini diharapkan dapat memberikan bantuan kepada pembaca baru untuk lebih mudah dipertemukan dengan buku yang menarik minat bacanya. Pendekatan yang akan digunakan dalam pengembangan sistem rekomendasi buku adalah *collaborative filtering* yang memerlukan informasi sumber data dari pembaca lainnya.
-
-
+Salah satu solusi yang dapat dimanfaatkan untuk membantu seseorang dalam menemukan buku yang sesuai adalah dengan membangun sistem rekomendasi buku. Sistem ini bertujuan untuk menyarankan buku-buku kepada pengguna berdasarkan preferensi atau riwayat bacaan, sehingga proses pencarian buku menjadi lebih efisien dan terarah [2]. Sistem rekomendasi tersebut memanfaatkan data dari ulasan atau penilaian pengguna lain untuk menyajikan daftar buku yang kemungkinan besar akan disukai oleh pengguna baru. Dengan adanya sistem ini, diharapkan pembaca pemula dapat lebih mudah menemukan bacaan yang sesuai dengan ketertarikannya. Dalam pengembangannya, pendekatan yang digunakan adalah collaborative filtering, yaitu metode yang memanfaatkan interaksi dan perilaku pembaca lain sebagai dasar rekomendasi.
 
 ## Business Understanding
 
 ### Problem Statements
 
-Berdasarkan permasalahan yang sudah dijelaskan dapat dirumuskan masalah sebagai berikut:
+Berdasarkan uraian permasalahan sebelumnya, maka dapat dirumuskan beberapa pertanyaan sebagai berikut:
 
-- Bagaimana cara mengembangkan sistem rekomendasi buku yang dapat meningkatkan minat baca ?
-- Apa teknik  yang tepat dan akurat untuk metode *collaborative filtering*  dalam pengembangan sistem rekomendasi buku ini ?
+* Bagaimana merancang dan membangun sistem rekomendasi buku yang mampu mendorong peningkatan minat baca pengguna?
 
+* Teknik apa yang paling sesuai dan memberikan hasil akurasi terbaik dalam penerapan metode collaborative filtering untuk sistem rekomendasi buku ini?
 ### Goals
 
 Tujuan dari proyek ini adalah sebagai berikut:
