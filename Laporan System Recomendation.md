@@ -327,24 +327,20 @@ Hasil dari prediksi  dapat dilihat di Tabel 1.
   Hasil dari prediksi  dapat dilihat di Tabel 2.
 
   Tabel 2.Daftar 10 teratas rekomendasi buku untuk pembaca dengan User-ID 276729 dengan teknik **Neural Network**
+
+|   	    |    ISBN       |  Book-Title                                             | 	 Book-Author       | 
+|---------|---------------|---------------------------------------------------------|----------------------| 
+|  47213	|  0373764359	  |  His Majesty, M.D. (Man Of The Month/The Royal ...	    |   Leanne Banks       | 
+|  57191	|  0373246005	  |  Where You Least Expect It (Silhouette Special ...	    |   Tori Carrington    | 
+|  57639	|  0140048103	  |  A Square of Sky and a Touch of Earth                 	|   Janina David       | 
+|  105002	|  0789459698	  |  Essential Managers: Managing Budgets                   |   Stephen Brookson   | 
+|  189894	|  0586061657	  |  The Panther Book of Scottish Short Stories	            |   James Campbell     | 
+|  196622 |  1558749527	  |  Perfect Daughters (Revised Edition)	                  |   Robert J. Ackerman | 
+|  207403	|  0380778491	  |  A Question of Innocence                                |   Brandilyn Collins  | 
+|  218071	|  1878624393	  |  There's an Elephant in the Bathtub (Storytime ...	    |   Jo Albee           | 
+|  240999	|  0465039138	  |  Code and Other Laws of Cyberspace                      |   Lawrence Lessig    | 
+|  259193	|  0821730533   |  Delightful Deception (Regency)                         |  	Nancy Lawrence     | 
   	
-|       | ISBN	   |        Book-Title	                                |          Book-Author     |
-|-------|--------  | ---------------------------------------------------| ------------------------ |
-|27937  |0452280362|	Dreaming Southern	                                |     Linda Bruckheimer    |
-|44011  |0964535203|Kombucha: How to and What It's All About            |	    Alana Pascal         |
-|55318  |0805047174|Stopping for Death: Poems of Death and Loss         |	    Carol Ann Duffy      |
-|78939  |1582341141|Mangoes and Quince: A Novel	                        |     Carol Field          |
-|146801 |0671646877|	Scene of the Crime (The Hardy Boys Casefiles, ...	|     Franklin Dixon       |
-|150467 |0843946474|	Keeper of My Heart	                              |     Penelope Neri        |
-|168117 |0932592104|The Klutz Book of Knots: How to Tie the World'...   |	    John Cassidy         |
-|172097 |0471527270|	Neanderthals at Work: How People and Politics ...	|     Albert J. Bernstein  |
-|214910 |0451197348|	A Cat on Stage Left: An Alice Nestleton Myster... |     Lydia Adamson        |
-|236975 |0020955707|	GOLDEN BOUGH	                                    |     James G, Sr. Fraser  |
-----------------------------------------------------------------------------------------------------
-
-  
-
-
 
 ## Evaluation
 
