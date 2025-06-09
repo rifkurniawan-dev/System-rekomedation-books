@@ -40,46 +40,58 @@ Untuk mencapai tujuan pengembangan sistem rekomendasi buku, digunakan pendekatan
 * **Collaborative Filtering dengan teknik Singular Value Decomposition (SVD)**
 
 SVD merupakan metode faktorisasi matriks yang digunakan untuk mereduksi ukuran dimensi matriks menjadi bentuk yang lebih ringkas. Dalam konteks sistem rekomendasi, SVD mengelompokkan pengguna berdasarkan atribut mereka, lalu melakukan dekomposisi terhadap matriks penilaian (rating). Proses ini menghasilkan matriks representasi baru dari pengguna dan item, yang kemudian dianalisis untuk menghitung tingkat kemiripan antar pengguna dalam memberikan rekomendasi.
-(https://ieeexplore.ieee.org/abstract/document/6615466)].
 
-- *Collaborative Filtering* dengan teknik *Neural Network*.
+* **Collaborative Filtering dengan teknikNeural Network**
 
-  *Neural Network* adalah algoritma *machine learning* yang meniru sistem jaringan saraf manusia. *Neural Network* dapat dikombinasikan dengan metode *collaborative filtering* untuk bisa mendapatkan esensi *progressive learning*. *Neural Network* dapat mengenali pola implisit antara profil *user* dengan *items* [[4](https://dl.acm.org/doi/abs/10.5555/1983862.1983922)].
-
+  Neural Network merupakan algoritma machine learning yang meniru cara kerja jaringan saraf manusia. Dalam sistem rekomendasi, algoritma ini dapat diintegrasikan dengan metode collaborative filtering untuk memperoleh kemampuan progressive learning, yakni pembelajaran yang terus berkembang seiring bertambahnya data. Dengan pendekatan ini, Neural Network mampu mengidentifikasi pola tersembunyi antara karakteristik pengguna dan item yang direkomendasikan.
+  
 ## Data Understanding
 
-Dataset yang digunakan untuk pengembangan sistem rekomendasi buku diambil dari kaggle yaitu [Book Recommendation Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset). Dataset ini berisi data buku (*books*), data pembaca (*users*) dan data penilaian (*ratings*). Terdapat 278.858 data pembaca dengan data penilaian sebanyak 1.149.780 untuk 271.360 buku. Dataset ini memiliki 3 file dengan ekstensi *comma separated value* yaitu `Books.csv`, `Ratings.csv` dan `Users.csv`
+Dataset yang digunakan dalam pengembangan sistem rekomendasi buku diperoleh dari Kaggle **Book Recommendation Dataset**. Dataset ini mencakup tiga jenis data utama: data **buku (books), data pengguna (users), dan data penilaian (ratings)**. Secara keseluruhan, terdapat 278.858 entri pengguna dengan total 1.149.780 penilaian terhadap 271.360 buku. Dataset ini terdiri dari tiga file berformat comma-separated values (CSV), yaitu ```Books.csv```, ```Ratings.csv```, dan ```Users.csv```.
 
-Berikut penjelasan untuk masing-masing file yang terdapat di dataset ini.
+Penjelasan masing-masing file dalam dataset ini adalah sebagai berikut:
 
-- File `Books.csv` : file ini berisi informasi tentang buku yang diambil dari *Amazon Web Services*
-- File `Users.csv`: file ini berisi informasi tentang pembaca yaitu user ID yang sudah dianonimkan dan informasi demografi pembaca.
-- File `Ratings.csv` : file ini berisi informasi penilaian pembaca terhadap buku dengan skala 0 sampai 10, semakin tinggi nilai semakin tinggi apresiasi pembaca terhadap buku yang dinilai.
+* ```Books.csv```: Berisi data mengenai buku-buku yang diperoleh dari Amazon Web Services, mencakup informasi detail seperti ISBN, Judul Buku, Penulis Buku, Tahun Terbit, Penerbit dan URL Gambar S
+* ```Ratings.csv```: Menyajikan data penilaian yang diberikan oleh pengguna terhadap buku dengan skala 0 hingga 10, di mana nilai yang lebih tinggi menunjukkan tingkat apresiasi yang lebih besar terhadap buku tersebut.
 
-Fitur-fitur yang terdapat pada data adalah sebagai berikut :
+* ```Users.csv```: Memuat informasi tentang para pembaca, termasuk ID pengguna yang telah dianonimkan serta data demografi seperti lokasi dan usia.
 
-Fitur Data *Books*
 
-* ISBN : *International Standard Book Number* yaitu kode unik buku
-* Book-Title : judul buku
-* Book-Author : penulis  buku
-* Year-Of-Publication : tahun terbit buku
-* Publisher : nama penerbit buku
-* Image-URL-S : alamat url gambar buku dengan ukuran kecil di situs amazon
-* Image-URL-M : alamat url gambar buku dengan ukuran sedang di situs amazon
-* Image-URL-L : alamat url gambar buku dengan ukuran besar di situs amazon
+Fitur pada masing-masing data:
+Fitur pada Data Books:
 
-Fitur Data *Users*
+* ```ISBN```: Nomor identifikasi unik untuk setiap buku (International Standard Book Number).
 
-- User-ID : kode ID pembaca dalam bentuk *integer*
-- Location : lokasi tempat tinggal pembaca
-- Age : umur dari pembaca
+* ```Book-Title```: Judul buku.
 
-Fitur Data *Ratings*
+* ```Book-Author```: Nama penulis buku.
 
-- User-ID : kode ID pembaca
-- ISBN : kode unik buku
-- Book-Rating : nilai *rating* dari buku yang dibaca dengan rentang nilai dari 0 sampai 10. Nilai rating 0 berarti belum memberikan rating
+* ```Year-Of-Publication```: Tahun buku diterbitkan.
+
+* ```Publisher```: Nama penerbit buku.
+
+* ```Image-URL-S```: URL gambar sampul buku ukuran kecil (dari Amazon).
+
+* ```Image-URL-M```: URL gambar sampul buku ukuran sedang (dari Amazon).
+
+* ```Image-URL-L```: URL gambar sampul buku ukuran besar (dari Amazon).
+
+**Fitur pada Data Users:**
+
+* ```User-ID```: Identifikasi unik pembaca dalam bentuk bilangan bulat.
+
+* ```Location```: Lokasi tempat tinggal pengguna.
+
+* ```Age```: Usia pengguna.
+
+**Fitur pada Data Ratings:**
+
+* ```User-ID```: ID pengguna yang memberikan penilaian.
+
+* ```ISBN```: Kode unik dari buku yang dinilai.
+
+* ```Book-Rating```: Skor penilaian terhadap buku, dengan rentang 0 hingga 10. Nilai 0 menunjukkan bahwa pengguna belum memberikan rating.
+
 
 ### Univariate Analysis
 
