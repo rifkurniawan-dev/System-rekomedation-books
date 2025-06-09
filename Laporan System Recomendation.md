@@ -87,26 +87,26 @@ Berdasarkan eksplorasi awal menggunakan .info() sebagai berikut:
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 271360 entries, 0 to 271359
 Data columns (total 8 columns):
- #   Column               Non-Null Count   Dtype 
---------------------------------------------------  
- 0   ISBN                 271360 non-null  object
---------------------------------------------------
- 1   Book-Title           271360 non-null  object
- -------------------------------------------------
- 2   Book-Author          271358 non-null  object
- -------------------------------------------------
- 3   Year-Of-Publication  271360 non-null  object
- -------------------------------------------------
- 4   Publisher            271358 non-null  object
- -------------------------------------------------
- 5   Image-URL-S          271360 non-null  object
- -------------------------------------------------
- 6   Image-URL-M          271360 non-null  object
- --------------------------------------------------
- 7   Image-URL-L          271357 non-null  object
- --------------------------------------------------
-dtypes: object(8)
-memory usage: 16.6+ MB
+| #  | Column              | Non-Null Count  | Dtype  |
+|----|---------------------|-----------------|--------|  
+| 0  | ISBN                | 271360 non-null | object |
+|----|---------------------|-----------------|--------|
+| 1  | Book-Title          | 271360 non-null | object |
+| ---|---------------------|-----------------|--------|
+| 2  | Book-Author         | 271358 non-null | object |
+| ---|---------------------|-----------------|--------|
+| 3  | Year-Of-Publication | 271360 non-null | object |
+| ---|---------------------|-----------------|--------|
+| 4  | Publisher           | 271358 non-null | object |
+| ---|---------------------|-----------------|--------|
+| 5  | Image-URL-S         | 271360 non-null | object |
+| ---|---------------------|-----------------|--------|
+| 6  | Image-URL-M         | 271360 non-null | object |
+| ---|---------------------|-----------------|--------|
+| 7  | Image-URL-L         | 271357 non-null | object |
+| ---|---------------------|-----------------|--------|
+|dtypes: object(8)
+|memory usage: 16.6+ MB
 Setelah mengeksekusi kode di atas, dapat dilihat bahwa seluruh kolom pada dataset Books.csv memiliki tipe yang berupa data object. Ada hal unik yang didapati ketika menjalankan kode di atas, dapat dilihat bahwa kolom Year-Of-Publication bertipe data object sedangkan tahun publikasi umumnya bertipe data integer, oleh karena itu perlu adanya perbaikan pada tipe data.
 Hasil Perbaikan tipe data
 ISBN                   object
