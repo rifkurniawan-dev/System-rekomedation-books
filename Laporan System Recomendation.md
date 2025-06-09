@@ -209,12 +209,7 @@ SVD bekerja dengan merepresentasikan interaksi antara pengguna dan item dalam be
 Latent factor sendiri merupakan fitur tersembunyi yang mengungkap karakteristik atau pola tertentu dari buku dan preferensi pengguna, yang dalam proyek ini dilandaskan pada nilai Book-Rating. Melalui pendekatan ini, sistem dapat memetakan hubungan kompleks antara pembaca dan buku secara lebih efisien, sekalipun sebagian besar data penilaian bersifat spars (jarang).
 
 
-
-  ![Image](https://github.com/user-attachments/assets/f0beee7d-02f1-411b-88b0-9e62fe17c7f2)
-
-  
-
-  Gambar 5. Tampilan Rumus SVD untuk Dekomposisi Matriks
+##**X = USV**T
 
   Kelebihan dan kekurangan SVD dijelaskan dibawah ini :
 
