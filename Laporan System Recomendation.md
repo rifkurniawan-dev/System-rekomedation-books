@@ -30,16 +30,17 @@ Berdasarkan uraian permasalahan sebelumnya, maka dapat dirumuskan beberapa perta
 
 Tujuan dari proyek ini adalah sebagai berikut:
 
-- Mengembangkan sistem rekomendasi buku yang dapat meningkatkan minat baca berdasarkan ulasan pembaca lainnya.
-- Memilih teknik yang tepat yang tepat dan akurat untuk metode *collaborative filtering*  untuk pengembangan sistem rekomendasi buku ini.
+* Membangun sebuah sistem rekomendasi buku yang mampu mendorong peningkatan minat membaca dengan memanfaatkan ulasan dari pembaca lain.
 
+* Menentukan dan menerapkan metode collaborative filtering yang paling sesuai dan akurat untuk mendukung pengembangan sistem rekomendasi ini.
 ### Solution statements
 
-Untuk mencapai tujuan pengembangan sistem rekomendasi buku digunakan metode *collaborative filtering* dengan teknik *Singular Value Decomposition* (SVD) dan *Neural Network*. Kedua teknik ini akan dibandingkan dan dipilih yang terbaik. Berikut penjelasan 2 teknik tersebut.
+Untuk mencapai tujuan pengembangan sistem rekomendasi buku, digunakan pendekatan collaborative filtering dengan menerapkan dua teknik, yaitu Singular Value Decomposition (SVD) dan Neural Network. Kedua pendekatan ini akan dibandingkan untuk menentukan metode yang paling efektif.
 
-- *Collaborative Filtering* dengan teknik *Single Value Decomposition* (SVD)
+* **Collaborative Filtering dengan teknik Singular Value Decomposition (SVD)**
 
-  SVD adalah teknik faktorisasi matriks yang mereduksi dimensi matriks menjadi dimensi yang lebih kecil. Di sistem rekomendasi, SVD akan mengklasifikasi *users* sesuai dengan atributnya kemudian dilakukan *decompose* matrix *rating*. SVD akan menggabungkan matriks atribut *users* dengan matriks *rating* tadi untuk mendapat matrik baru yang dapat dihitung kesamaannya berdasarkan pasangan *users* [[3](https://ieeexplore.ieee.org/abstract/document/6615466)].
+SVD merupakan metode faktorisasi matriks yang digunakan untuk mereduksi ukuran dimensi matriks menjadi bentuk yang lebih ringkas. Dalam konteks sistem rekomendasi, SVD mengelompokkan pengguna berdasarkan atribut mereka, lalu melakukan dekomposisi terhadap matriks penilaian (rating). Proses ini menghasilkan matriks representasi baru dari pengguna dan item, yang kemudian dianalisis untuk menghitung tingkat kemiripan antar pengguna dalam memberikan rekomendasi.
+(https://ieeexplore.ieee.org/abstract/document/6615466)].
 
 - *Collaborative Filtering* dengan teknik *Neural Network*.
 
