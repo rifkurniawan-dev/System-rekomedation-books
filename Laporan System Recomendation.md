@@ -84,8 +84,11 @@ Fitur pada Data Books:
 
 Berdasarkan eksplorasi awal menggunakan .info() sebagai berikut: 
 * **```Books.csv```**
+  
 <class 'pandas.core.frame.DataFrame'>
+
 RangeIndex: 271360 entries, 0 to 271359
+
 Data columns (total 8 columns):
 
 |  #  |     Column              |  Non-Null Count  |  Dtype  |
@@ -101,18 +104,24 @@ Data columns (total 8 columns):
 --------------------------------------------------------------
 
 dtypes: object(8)
+
 memory usage: 16.6+ MB
+
 Setelah mengeksekusi kode di atas, dapat dilihat bahwa seluruh kolom pada dataset Books.csv memiliki tipe yang berupa data object. Ada hal unik yang didapati ketika menjalankan kode di atas, dapat dilihat bahwa kolom Year-Of-Publication bertipe data object sedangkan tahun publikasi umumnya bertipe data integer, oleh karena itu perlu adanya perbaikan pada tipe data.
 Hasil Perbaikan tipe data
-ISBN                   object
-Book-Title             object
-Book-Author            object
-Year-Of-Publication     int64
-Publisher              object
-Image-URL-S            object
-Image-URL-M            object
-Image-URL-L            object
-dtype: object
+
+| ISBN                  |  object |
+|-----------------------|---------|
+| Book-Title            |  object |
+| Book-Author           |  object |
+| Year-Of-Publication   |   int64 |
+| Publisher             |  object |
+| Image-URL-S           |  object |
+| Image-URL-M           |  object |
+| Image-URL-L           |  object |
+| dtype: object         |         |
+-----------------------------------
+
 
 * **```Ratings```**
   <class 'pandas.core.frame.DataFrame'>
