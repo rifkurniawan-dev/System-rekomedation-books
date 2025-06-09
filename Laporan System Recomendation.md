@@ -97,125 +97,118 @@ Fitur pada Data Books:
 
 Dilakukan analisa dengan teknik *univarate* EDA untuk mengetahui informasi yang ada pada variabel di dataset. Analisa hanya dilakukan di beberapa variabel sesuai dengan kebutuhan sistem rekomendasi.
 
-**Variabel Year-Of-Publication**
+**Jumlah Buku Berdasarkan Penulis**
 
-![Image](https://github.com/user-attachments/assets/e6c9ce05-5183-4ce1-b669-3352e90df01b)
+![image](https://github.com/user-attachments/assets/d7c91c11-051d-4ed9-8926-199d618094f6)
 
-Gambar 1. Grafik Persebaran Jumlah Data Variabel Year-Of-Publication
+Gambar 1. Grafik Jumlah Buku Berdasarkan Penulis
 
-Pada Gambar 1 terlihat data persebaran jumlah data variabel Year-Of-Publication ditemukan informasi data tahun terbit buku didominasi nilai dengan rentang tahun 1968 - 2003 sedangkan untuk tahun terbit 0 menunjukkan buku tidak memiliki data tahun terbit.
+Pada Gambar 1 terlihat data Analisis terhadap kolom Book-Author menunjukkan bahwa penulis Agatha Christie merupakan penulis paling produktif dalam dataset, dengan jumlah buku lebih dari 600 judul. Diikuti oleh William Shakespeare dan Stephen King, yang juga memiliki lebih dari 500 judul buku masing-masing.
 
-Selain itu dari hasil eksplorasi ditemukan informasi bahwa:
+Visualisasi dalam bentuk diagram batang memperlihatkan 20 penulis teratas berdasarkan jumlah buku yang mereka tulis. Hal ini menunjukkan adanya dominasi oleh beberapa penulis terkenal yang sangat produktif dalam industri penerbitan buku.
 
-* Terdapat tahun terbit buku yang lebih besar dari tahun 2023 yaitu 2024, 2026, 2030, 2038, 2037, 2050
-* Terdapat tahun terbit buku yang bukan dalam bentuk angka tetapi kata yaitu 'DK Publishing Inc' dan 'Gallimard'
+**Penerbit teratas berdasarkan jumlah buku**
 
-**Variabel Book-Author**
+Gambar 2. Nama Penerbit teratas berdasarkan jumlah buku
 
-Tabel 1. Tabel Jumlah Data dan Persentase Variabel Book-Author
+![image](https://github.com/user-attachments/assets/4aa03660-a518-4819-99b6-958e9327edcf)
 
-| Book-Author          | Jumlah Record | Persentase |
-| -------------------- | ------------- | ---------- |
-| Agatha Christie      | 632           | 0.2        |
-| William Shakespeare  | 567           | 0.2        |
-| Stephen King         | 524           | 0.2        |
-| Ann M. Martin        | 423           | 0.2        |
-| Carolyn Keene        | 373           | 0.1        |
-| ...                  | ...           | ...        |
-| Linda Jackson        | 1             | 0.0        |
-| Artiste C. Arthur    | 1             | 0.0        |
-| Emily Pearl Kingsley | 1             | 0.0        |
-| Jean Cassels         | 1             | 0.0        |
-| Christopher  Biffle  | 1             | 0.0        |
+Dilihat dari Gambar 2 didapatkan informasi sebagai berikut :
+
+-Selanjutnya, dilakukan analisis terhadap kolom Publisher. Ditemukan bahwa penerbit Harlequin menjadi penerbit dengan jumlah buku terbanyak dalam dataset, yaitu lebih dari 7000 judul buku. Hal ini mengindikasikan bahwa Harlequin merupakan salah satu penerbit paling aktif.
+Visualisasi bar chart menunjukkan 20 penerbit teratas, yang sebagian besar terdiri dari penerbit komersial besar dan mapan dalam industri penerbitan.
+**Tahun Terbit Buku**
+
+Gambar 3. Tahunn terbit buku teratas
+
+![image](https://github.com/user-attachments/assets/a4a6b8a0-d99c-4a31-bcc0-c0bef764bab9)
+
+Dilihat dari Gambar 3 didapatkan informasi sebagai berikut :
+
+Distribusi terhadap Year-Of-Publication menunjukkan bahwa tahun 2002 merupakan tahun dengan jumlah penerbitan buku terbanyak, yaitu lebih dari 17.500 buku. Grafik yang dihasilkan menampilkan 20 tahun teratas berdasarkan frekuensi penerbitan buku.
+Hal ini dapat disebabkan oleh meningkatnya digitalisasi dan distribusi data buku yang lebih masif pada awal 2000-an.
+
+**Rating Buku**
+Gambar 4. Visualisasi Frekuensi Jumlah Rating 
+
+![image](https://github.com/user-attachments/assets/e1a6789a-47cc-438a-b856-9c196baaf3c9)
 
 
+Dilihat dari Gambar 4 didapatkan informasi sebagai berikut :
 
-![Image](https://github.com/user-attachments/assets/08375f7b-e563-455b-97e9-a4b42963d018)
+Distribusi dari Book-Rating menunjukkan bahwa sebagian besar buku mendapatkan rating 0, yang kemungkinan besar menunjukkan tidak adanya rating dari pengguna, bukan berarti buku tersebut tidak disukai. Histogram yang ditampilkan menunjukkan frekuensi rating dari skala 0 hingga 10.
+Distribusi ini memberikan gambaran bahwa terdapat sejumlah besar data yang belum mendapatkan evaluasi atau penilaian dari pembaca.
 
-Gambar 2. Sepuluh Nama Penulis Terbanyak yang muncul di dataset
+**Buku dengan Rata-Rata Rating Tertinggi**
 
-Dilihat dari Tabel 1 dan Gambar 2 didapatkan informasi sebagai berikut :
+Setelah dilakukan penggabungan data antara buku dan rating, dihitung rata-rata rating untuk setiap judul buku. Ditemukan bahwa beberapa buku mendapatkan rata-rata rating tertinggi yaitu 10.0, contohnya:
 
-- Terdapat 102.023 nama penulis buku
-- Persentase penulis buku terbesar adalah 0.2 % sehingga dapat disimpulkan nilai dari variabel Book-Author memiliki keragaman data yang banyak dan tidak didominasi oleh penulis buku tertentu
-- 3 Penulis buku terbanyak yang sering muncul di dataset adalah Agatha Christie, William Shakespeare dan Stephen King
+* Dark Justice
+* California Historical Landmarks
+* Isms: a dictionary of words ending in -ism, -ology, and -phobia
+* 1,001 Things Everyone Should Know About American History
+* 10 Real SATs, Third Edition
 
-**Variabel Publisher**
+Buku-buku tersebut mendapatkan penilaian sempurna dari seluruh pengguna yang memberikan rating.
 
-Tabel 2. Jumlah Data dan Persentase Variabel Publisher
+**Buku dengan Rata-Rata Rating Terendah**
+Sebaliknya, ditemukan juga beberapa buku dengan rata-rata rating terendah yaitu 0.0, seperti:
 
-| Publisher               | Jumlah Record | Persentase |
-| ----------------------- | ------------- | ---------- |
-| Harlequin               | 7535          | 2.8        |
-| Silhouette              | 4220          | 1.6        |
-| Pocket                  | 3905          | 1.4        |
-| Ballantine Books        | 3783          | 1.4        |
-| Bantam Books            | 3646          | 1.3        |
-| ...                     | ...           | ...        |
-| Hannover House          | 1             | 0.0        |
-| Amber Quill Press, LLC. | 1             | 0.0        |
-| Lunchbox Press          | 1             | 0.0        |
-| Ugly Town               | 1             | 0.0        |
-| Connaught               | 1             | 0.0        |
-
-![Image](https://github.com/user-attachments/assets/384ec72f-0706-49e5-8291-9bfcbd530e88)
-
-Gambar 3. Sepuluh Nama Penerbit Buku Terbanyak yang muncul di dataset
-
-Dilihat dari Tabel 2 dan Gambar 3 didapatkan informasi sebagai berikut :
-
-* Terdapat 16.807 nama penerbit buku
-* Persentase penerbit buku terbanyak adalah 2.8 % yaitu Harlequin selisih 1% dengan publisher peringkat kedua yaitu Silhouette
-* 3 penerbit buku terbanyak adalah Harlequin, Silhouette dan Pocket
-
-**Variabel Book-Rating**
-
-Tabel 3. Jumlah Data dan Persentase Variabel Book-Rating
-
-| Book-Rating | Jumlah Record | Persentase |
-| ----------- | ------------- | ---------- |
-| 0           | 716109        | 62.3       |
-| 8           | 103736        | 9.0        |
-| 10          | 78610         | 6.8        |
-| 7           | 76457         | 6.6        |
-| 9           | 67541         | 5.9        |
-| 5           | 50974         | 4.4        |
-| 6           | 36924         | 3.2        |
-| 4           | 8904          | 0.8        |
-| 3           | 5996          | 0.5        |
-| 2           | 2759          | 0.2        |
-| 1           | 1770          | 0.2        |
-
-![Image](https://github.com/user-attachments/assets/563fcfa7-9e28-42c6-ba02-f8306895d08c)
-
-Gambar 4. Visualisasi Frekuensi Jumlah Rating di dataset
-
-Dilihat dari Tabel 3 dan grafik Gambar 4 didapatkan informasi sebagai berikut :
-
-* Jumlah pembaca yang belum memberikan penilaian ke buku (rating = 0) masih sangat banyak yaitu sebesar 62% dari dataset
-* Nilai rating yang sering muncul setelah rating 0 adalah rating 8 dengan persentase 8% dari dataset
-
+* Always Have Popsicles
+* Apple Magic (The Collector's series
+* Harry Potter and the Bible: The Menace Behind the Magick
+* Pokemon: The Official Collector's Sticker Book
+* Til the Fat Lady Sings
+  
 ## Data Preprocessing
 
-Dataset yang akan digunakan perlu olah telebih dahulu sebelum masuk ke tahap *data preparation*. Hal ini dikarenakan sumber data yang terpisah di 3 file *comma separated value*. Langkah-langkah yang dilakukan di tahap ini adalah sebagai berikut :
+Sebelum melakukan tahap data preparation, dataset perlu melalui proses pengolahan awal. Hal ini disebabkan karena data masih tersebar dalam tiga file berbeda berformat **comma separated values (CSV)**. Adapun langkah-langkah yang dilakukan dalam tahap ini meliputi:
 
-* **Penggabungan Data**. Sumber data masih terpisah-pisah di file `Books.csv`, `Ratings.csv` dan `Users.csv` sehingga dilakukan penggabungan data Books.csv dengan Ratings.csv berdasarkan variabel ISBN sebagai kode unik buku. Data `Users.csv` tidak ikut digabungkan karena fokus sistem rekomendasi buku ini tidak mengambil informasi umur dan demografi dari pembaca.
-* **Penghapusan Variabel**. Pada dataset yang sudah digabungkan masih terdapat variabel-variabel yang tidak digunakan dalam proses pembuatan model sehingga perlu dihapus untuk mengurangi dimensi. Variabel yang akan digunakan adalah User-Id, ISBN dan Book-Rating selain dari variabel yang disebutkan akan dihapus.
+* Penggabungan Dataset. Ketiga sumber data, yaitu ```Books.csv```, ```Ratings.csv```, dan ```Users.csv```, masih terpisah. Oleh karena itu, dilakukan penggabungan antara Books.csv dan Ratings.csv menggunakan variabel ISBN sebagai kunci unik setiap buku. Sementara itu, ```Users.csv``` tidak digabungkan karena sistem rekomendasi yang dikembangkan tidak memanfaatkan data umur maupun informasi demografis pengguna.
+
+* Penghapusan Kolom Tidak Relevan. Setelah penggabungan, masih terdapat beberapa kolom yang tidak diperlukan dalam proses pembuatan model. Untuk menyederhanakan dan mengurangi dimensi data, hanya kolom User-ID, ISBN, dan Book-Rating yang dipertahankan, sementara kolom lainnya dihapus.
+
 
 ## Data Preparation
 
 Langkah-langkah yang dilakukan untuk menyiapkan data (*data preparation*) adalah sebagai berikut :
 
-* **Penanganan Nilai yang Hilang (*Missing Value*)**. Pada dataset proyek ini tidak ditemukan nilai data yang hilang sehingga tidak dilakukan proses penanganan nilai yang hilang.
-* ***Encoding Data***.Dilakukan *encoding data*  yaitu proses pengkodean data dari satu format ke format lain agar lebih mudah dalam diproses. *Encoding data* yang dilakukan untuk variabel ISBN dan User-ID ke dalam indeks *integer*. Hal ini dilakukan untuk mempermudah proses training data nantinya.
-* **Skala Ulang Variabel**. Dilakukan skala ulang variabel yaitu mengubah nilai menjadi skala tertentu. Skala ulang dilakukan terhadap variabel Book-Rating menjadi skala 0 sampai 1. Hal ini dilakukan agar mempermudah proses training model dan lebih mudah dibaca oleh model.
-* **Pembagian Data Latih dan Data Uji**.Pembagian data dilakukan uji dan latih dilakukan dengan perbandingan 80% data latih dan 20% data uji. Di proyek ini menggunakan dua cara pembagian data latih dan data uji yaitu pembagian data latih dan data uji menggunakan [train_test_split](https://surprise.readthedocs.io/en/stable/model_selection.html#surprise.model_selection.split.train_test_split) *library* surprise yang akan digunakan untuk model dengan teknik SVD kemudian pembagian data latih dan data uji menggunakan pembagian data dengan persentase untuk model dengan teknik *Neural Network*.
 
+* **Penanganan Data Kosong (Missing Value)**.
+
+Dalam dataset yang digunakan pada proyek ini, tidak ditemukan adanya nilai yang hilang, sehingga tidak diperlukan langkah khusus untuk menangani **missing value**.
+
+* **Proses Encoding**.
+
+Dilakukan proses encoding, yaitu mengubah format data menjadi bentuk lain yang lebih mudah diproses oleh sistem. Pada tahap ini, variabel ```ISBN``` dan ```User-ID``` diubah ke dalam format indeks bilangan bulat ```integer``` untuk memudahkan proses pelatihan model di tahap berikutnya.
+
+
+* **Normalisasi Variabel.**
+
+Dilakukan normalisasi atau skala ulang terhadap variabel Book-Rating ke dalam rentang nilai antara ```0``` hingga ```1```. Tujuan dari normalisasi ini adalah untuk mempercepat dan mempermudah proses pelatihan model serta agar data lebih mudah dipahami oleh algoritma.
+
+* **Pembagian Data Latih dan Data Uji**.
+
+ Dataset dibagi menjadi dua bagian, yaitu ```80%``` sebagai data **latih** dan ```20%``` sebagai data **uji**. Dalam proyek ini, digunakan dua metode pembagian data, yakni: 
+ a. pembagian menggunakan fungsi ```train_test_split``` dari pustaka **Surprise** untuk model dengan metode **SVD**, 
+ b. pembagian berdasarkan persentase untuk model yang menggunakan pendekatan **Neural Network**.
 ## Modeling
 
-Pada proyek ini berfokus di metode *collaborative filtering* yaitu metode yang menyajikan data rekomendasi berdasarkan perilaku pengguna lain. Informasi yang digunakan sebagai acuan rekomendasi adalah penilai pembaca terhadap buku yang disimpan di variabel Book-Rating. Terdapat dua teknik yang digunakan untuk membuat sistem rekomendasi buku dengan *collaborative filtering* di proyek ini yaitu
+Proyek ini berfokus pada metode collaborative filtering, yaitu pendekatan yang merekomendasikan item (dalam hal ini buku) kepada pengguna berdasarkan preferensi atau perilaku pengguna lain yang serupa. Informasi utama yang digunakan sebagai dasar rekomendasi adalah penilaian pengguna terhadap buku, yang disimpan dalam **Rating Buku** .
 
-* *Collaborative filtering* dengan teknik SVD (*Single Value Decomposition*). Implementasi model SVD di proyek ini menggunakan library [Surprise](https://surprise.readthedocs.io/en/stable/getting_started.html). Cara kerja **collaborative filtering* dengan teknik SVD adalah dengan menggunakan matriks  yang setiap barisnya merepresentasikan pembaca dan kolomnya merepresentasikan buku kemudian dilakukan faktorisasi matriks  dengan SVD yang akan mengekstrak *latent factor* menghasilkan pemetaan relasi antara pembaca dan buku. SVD memecah matriks menjadi 3 matriks yaitu matriks U yang merepresentasikan hubungan antara pembaca dengan *latent factor*, matriks S merupakan matriks  diagonal yang merepresentasikan tingkat variasi dari *latent factor* dan matriks V yang merepresentasikan hubungan antara buku dengan *latent factor*. *Latent factor*  adalah karakteristik dari buku yang digunakan dalam hal ini variabel Book-Rating.
+Dalam pengembangan sistem rekomendasi ini, digunakan dua pendekatan **collaborative filtering**. Salah satu teknik yang diterapkan adalah **collaborative filtering berbasis Single Value Decomposition (SVD)**. Implementasi teknik SVD dilakukan menggunakan pustaka   ```Surprise```, yang dirancang khusus untuk membangun dan mengevaluasi sistem rekomendasi.
+
+SVD bekerja dengan merepresentasikan interaksi antara pengguna dan item dalam bentuk matriks, di mana setiap baris mewakili pengguna dan setiap kolom mewakili buku. Matriks ini kemudian difaktorisasi menjadi tiga komponen utama:
+
+* Matriks U, yang merepresentasikan hubungan antara pengguna dan latent factor,
+
+* Matriks S, yakni matriks diagonal yang menunjukkan tingkat kontribusi atau variasi dari masing-masing latent factor, dan
+
+* Matriks V, yang merepresentasikan hubungan antara buku dan latent factor.
+
+Latent factor sendiri merupakan fitur tersembunyi yang mengungkap karakteristik atau pola tertentu dari buku dan preferensi pengguna, yang dalam proyek ini dilandaskan pada nilai Book-Rating. Melalui pendekatan ini, sistem dapat memetakan hubungan kompleks antara pembaca dan buku secara lebih efisien, sekalipun sebagian besar data penilaian bersifat spars (jarang).
+
+
 
   ![Image](https://github.com/user-attachments/assets/f0beee7d-02f1-411b-88b0-9e62fe17c7f2)
 
