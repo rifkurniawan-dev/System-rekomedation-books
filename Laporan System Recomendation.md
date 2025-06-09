@@ -220,19 +220,19 @@ Latent factor sendiri merupakan fitur tersembunyi yang mengungkap karakteristik 
     * Membutuhkan resource yang lebih besar untuk komputasi dataset yang sangat besar
     * Sensitif terhadap data *outliers*
 
-|          ISBN    |   Book-Title                                     |	Book-Author   	|prediction_rate |
-|-------|----------|--------------------------------------------------|-----------------|----------------|-
-|0	    |034545104X|	Flesh Tones: A Novel	                          |M. J. Rose       |	0.284154       |
-|766517	|0671665871|	GOING HOME	                                    |Danielle Steel   |	0.284154       |
-|766523	|0671690582|	WHISPER OF DEATH : WHISPER OF DEATH	            |Christopher Pike	| 0.284154       |
-|766522	|0671690094|	ANNE FRANK: DIARY OF A YOUNG GIRL	              |Anne Frank       | 0.284154       |
-|766521	|067167630X|	BOOMER	                                        |Charles Taylor   |	0.284154       |
-|766520	|067167465X|	BEST OF ENEMIES (NANCY DREW HARDY BOY SUPERMYS..|Carolyn Keene	  | 0.284154       |
-|766519	|0671673513|	The SILENCE OF THE LAMBS	Thomas Harris	        |Thomas Harris    | 0.284154       |
-|766518	|0671670662|	WEB OF DREAMS (Casteel Saga (Paperback))	      |V.C. Andrews	    | 0.284154       |
-|766516	|0671664549|	Happy Birthday, Moon (Moonbear)	                |Frank Asch       |	0.284154       |
-|766525	|0671692550|	The Tale of Peter Rabbit (Sticker Book)	        |Beatrix Potter	  | 0.284154       |
-----------------------------------------------------------------------------------------------------------
+|          ISBN      |   Book-Title                                     |	Book-Author   	  |prediction_rate |
+|-------|------------|--------------------------------------------------|-------------------|----------------|
+|0	    | 034545104X |	Flesh Tones: A Novel	                          |  M. J. Rose       |	0.284154       |
+|766517	| 0671665871 |	GOING HOME	                                    |  Danielle Steel   |	0.284154       |
+|766523	| 0671690582 |	WHISPER OF DEATH : WHISPER OF DEATH	            |  Christopher Pike	| 0.284154       |
+|766522	| 0671690094 |	ANNE FRANK: DIARY OF A YOUNG GIRL	              |  Anne Frank       | 0.284154       |
+|766521 | 067167630X |	BOOMER	                                        |  Charles Taylor   |	0.284154       |
+|766520	| 067167465X |	BEST OF ENEMIES (NANCY DREW HARDY BOY SUPERMYS. |  Carolyn Keene	  | 0.284154       |
+|766519	| 0671673513 |	The SILENCE OF THE LAMBS	Thomas Harris	        |  Thomas Harris    | 0.284154       |
+|766518	| 0671670662 |	WEB OF DREAMS (Casteel Saga (Paperback))	      |  V.C. Andrews	    | 0.284154       |
+|766516	| 0671664549 |	Happy Birthday, Moon (Moonbear)	                |  Frank Asch       |	0.284154       |
+|766525	| 0671692550 |	The Tale of Peter Rabbit (Sticker Book)	        |  Beatrix Potter	  | 0.284154       |
+--------------------------------------------------------------------------------------------------------------
 
 
 * *Collaborative filtering* dengan teknik *Neural Network*. Pada proyek ini implementasi *collaborative filtering* dengan teknik Neural Network menggunakan bantuan Keras model yang terinspirasi dari *class* [RecommenderNet](https://keras.io/examples/structured_data/collaborative_filtering_movielens/). Model *Neural Network* yang digunakan menggunakan BinaryCrossentropy sebagai *loss function*, Adam (*Adaptive Moment Estimation*) sebagai *optimizer* dan RMSE (*Root Mean Square Error*) sebagai matriks evaluasi. Hyperparameter yang digunakan adalah epoch sebesar 8 dan batch_size sebesar 500. Nilai ini didapatkan dengan cara *trial and error.*
