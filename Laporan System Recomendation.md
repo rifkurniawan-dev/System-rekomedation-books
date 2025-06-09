@@ -47,7 +47,7 @@ SVD merupakan metode faktorisasi matriks yang digunakan untuk mereduksi ukuran d
   
 ## Data Understanding
 
-Dataset yang digunakan dalam pengembangan sistem rekomendasi buku diperoleh dari Kaggle **Book Recommendation Dataset**. Dataset ini mencakup tiga jenis data utama: data **buku (books), data pengguna (users), dan data penilaian (ratings)**. Secara keseluruhan, terdapat 278.858 entri pengguna dengan total 1.149.780 penilaian terhadap 271.360 buku. Dataset ini terdiri dari tiga file berformat comma-separated values (CSV), yaitu ```Books.csv```, ```Ratings.csv```, dan ```Users.csv```.
+Dataset yang digunakan dalam pengembangan sistem rekomendasi buku diperoleh dari Kaggle [**Book Recommendation Dataset**](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset). Dataset ini mencakup tiga jenis data utama: data **buku (books), data pengguna (users), dan data penilaian (ratings)**. Secara keseluruhan, terdapat 278.858 entri pengguna dengan total 1.149.780 penilaian terhadap 271.360 buku. Dataset ini terdiri dari tiga file berformat comma-separated values (CSV), yaitu ```Books.csv```, ```Ratings.csv```, dan ```Users.csv```.
 
 Penjelasan masing-masing file dalam dataset ini adalah sebagai berikut:
 
@@ -55,6 +55,28 @@ Penjelasan masing-masing file dalam dataset ini adalah sebagai berikut:
 * ```Ratings.csv```: Menyajikan data penilaian yang diberikan oleh pengguna terhadap buku dengan skala 0 hingga 10, di mana nilai yang lebih tinggi menunjukkan tingkat apresiasi yang lebih besar terhadap buku tersebut.
 
 * ```Users.csv```: Memuat informasi tentang para pembaca, termasuk ID pengguna yang telah dianonimkan serta data demografi seperti lokasi dan usia.
+  
+Berdasarkan eksplorasi awal menggunakan .info() dan .isnull().sum() dari masing-masing DataFrame, ditemukan kondisi missing value sebagai berikut:
+
+```**Books.csv:**```
+
+* ```Book-Author```: 1 nilai kosong
+
+* ```Year-Of-Publication```: 0 nilai kosong
+
+* ```Publisher```: 2 nilai kosong
+
+* Kolom gambar (```Image-URL-S```, ```Image-URL-M```, ```Image-URL-L```) tidak memiliki nilai kosong.
+
+```**Ratings.csv:**```
+
+Tidak terdapat missing value pada kolom manapun.
+
+**```Users.csv:```**
+
+* ```Age```: Mengandung sejumlah nilai kosong dan nilai yang tidak valid (misalnya, usia < 5 atau > 100).
+
+* ```Location```: Tidak ada missing value, namun format lokasi tidak konsisten di beberapa entri.
 
 
 Fitur pada masing-masing data:
