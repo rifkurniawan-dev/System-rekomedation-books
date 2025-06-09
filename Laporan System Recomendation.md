@@ -220,6 +220,10 @@ Latent factor sendiri merupakan fitur tersembunyi yang mengungkap karakteristik 
     * Membutuhkan resource yang lebih besar untuk komputasi dataset yang sangat besar
     * Sensitif terhadap data *outliers*
 
+Hasil dari prediksi  dapat dilihat di Tabel 1.
+
+  Tabel 1.Daftar 10 teratas rekomendasi buku untuk pembaca dengan User-ID 276729 dengan teknik **SVD**
+
 |        |    ISBN    |   Book-Title                                    |	Book-Author   	  | prediction_rate |
 |--------|------------|-------------------------------------------------|-------------------|-----------------|
 | 0	     | 034545104X |	Flesh Tones: A Novel	                          |  M. J. Rose       |	0.284154        |
@@ -241,7 +245,7 @@ Latent factor sendiri merupakan fitur tersembunyi yang mengungkap karakteristik 
 
   ![Image](https://github.com/user-attachments/assets/e82e74d7-d1bb-4e0d-8824-ef199ac7ed3d)
 
-  Gambar 6. Ilustrasi Cara Kerja Neural Network di Sistem Rekomendasi
+  Gambar 5. Ilustrasi Cara Kerja Neural Network di Sistem Rekomendasi
 
   * Kelebihan
     * Bagus untuk model dengan input dengan banyak dimensi
@@ -251,7 +255,6 @@ Latent factor sendiri merupakan fitur tersembunyi yang mengungkap karakteristik 
     * Bergantung kepada data latih sehingga rentan terhadap *overfitting*
 
   
-
   Hasil dari prediksi  dapat dilihat di Tabel 2.
 
   Tabel 2.Daftar 10 teratas rekomendasi buku untuk pembaca dengan User-ID 276729 dengan teknik **Neural Network**
@@ -276,15 +279,18 @@ Latent factor sendiri merupakan fitur tersembunyi yang mengungkap karakteristik 
 
 ## Evaluation
 
-Metric yang digunakan untuk mengevaluasi model adalah RMSE (*Root Mean Squared Error*). RMSE menghitung akar dari rata-rata selisih kuadrat antara nilai prediksi dan nilai aktual atau bisa dikatakan akar kuadrat dari MSE (*Mean Squared Error*). Nilai RMSE yang kecil menunjukkan performa model yang lebih baik dan akurat.
+Root Mean Squared Error (RMSE) merupakan salah satu metrik evaluasi yang digunakan untuk mengukur seberapa besar perbedaan antara nilai yang diprediksi oleh model dan nilai sebenarnya. RMSE diperoleh dengan cara menghitung akar kuadrat dari rata-rata selisih kuadrat antara nilai prediksi dan nilai aktual. Semakin kecil nilai RMSE, maka semakin baik dan akurat performa model dalam melakukan prediksi.
 
 Rumus RMSE
 
 ![Image](https://github.com/user-attachments/assets/70e12977-4477-4753-a8c2-d323dd6bd972)
 
-```
-Dengan n = jumlah dataset, yi = nilai sebenarnya , ŷi = nilai prediksi
-```
+**Keterangan:**
+
+* Dengan n = jumlah dataset
+* yi = nilai sebenarnya
+* ŷi = nilai prediksi
+
 
 Nilai dari RMSE dari tiap pendekatan model dapat dilihat di Tabel 1.
 
@@ -292,23 +298,18 @@ Tabel 3. Tabel Hasil RMSE (*Root Mean Squared Error*) tiap model
 
 |                | test     |
 | -------------- | -------- |
-| SVD            | 0,343416 |
-| Neural Network | 0,441751 |
+| SVD            | 0.344028 |
+| Neural Network | 0.439593 |
 
-Dari Tabel 3 terlihat bahwa nilai RMSE untuk teknik SVD lebih kecil dibandingkan dengan teknik Neural Network, yaitu sebesar 0.343416 untuk SVD dan 0.441751 untuk Neural Network. Hal ini menunjukkan bahwa teknik SVD memberikan performa yang lebih baik dalam hal akurasi prediksi pada sistem rekomendasi buku dengan metode collaborative filtering. Nilai RMSE sebesar 0.3 hingga 0.4 masih tergolong cukup baik dalam konteks sistem rekomendasi. Meskipun performa Neural Network saat ini belum melampaui SVD, teknik ini masih memiliki potensi untuk ditingkatkan lebih lanjut melalui optimasi hyperparameter, arsitektur jaringan, dan data pelatihan. Oleh karena itu, teknik Neural Network tetap dipertimbangkan dalam pengembangan lanjutan proyek ini.
-
+Dari Tabel 3 diketahui bahwa nilai RMSE yang dihasilkan oleh metode SVD lebih rendah dibandingkan dengan metode Neural Network, yakni sebesar 0.344028 untuk SVD dan 0.439593 untuk Neural Network. Nilai tersebut mengindikasikan bahwa SVD memiliki kinerja prediksi yang lebih akurat dalam sistem rekomendasi buku berbasis collaborative filtering. Rentang nilai RMSE antara 0.3 hingga 0.4 masih dianggap cukup baik dalam konteks sistem rekomendasi. Meskipun performa Neural Network saat ini belum melampaui SVD, metode ini tetap memiliki peluang untuk ditingkatkan melalui penyempurnaan seperti tuning hyperparameter, modifikasi arsitektur jaringan, serta perbaikan kualitas data latih. Oleh karena itu, pendekatan Neural Network tetap relevan dan dapat dipertimbangkan untuk pengembangan sistem rekomendasi di tahap berikutnya.
 ## Kesimpulan
 
-Dari tahapan yang sudah dilakukan sudah berhasil dibuat sistem rekomendasi buku dengan metode *collaborative filtering* dengan teknik SVD dan *Neural Network*. Sistem rekomendasi yang dibuat menggunakan data rating dari pembaca lainnya sebagai acuan sehingga akan merekomendasikan buku yang dianggap menarik oleh pembaca lainnya. Diharapkan dengan merekomendasi buku-buku yang menarik, pembaca baru dapat mulai tertarik untuk memulai membaca buku sehingga meningkatkan minat baca buku di Indonesia. 
+Melalui serangkaian tahapan yang telah dilakukan, berhasil dikembangkan sebuah sistem rekomendasi buku berbasis collaborative filtering dengan memanfaatkan dua pendekatan, yaitu teknik SVD dan Neural Network. Sistem ini menggunakan data rating dari pengguna lain sebagai dasar dalam memberikan rekomendasi, sehingga buku-buku yang disarankan merupakan buku yang dianggap menarik oleh pembaca sebelumnya. Harapannya, dengan menyajikan rekomendasi yang relevan dan menarik, sistem ini dapat mendorong minat pembaca baru untuk mulai membaca, serta turut berkontribusi dalam meningkatkan budaya literasi di Indonesia.
 
-Dari kedua teknik yang digunakan di proyek ini, keduanya memiliki kecocokan ketika diterapkan dalam membangun sistem rekomendasi buku dilihat dari nilai RMSE yang cukup kecil. Dari kedua teknik yaitu teknik SVD dan teknik Neural Network, teknik Neural Network yang dipilih sebagai teknik yang lebih akurat dan tepat. Teknik *Neural Network* dipilih karena memiliki banyak ruang untuk peningkatan performa dalam merekomendasikan buku selain itu hasil RMSE dari teknik *Neural Network* lebih kecil dari teknik SVD. Peningkatan performa ini dapat dilakukan dengan cara mengatur hyperparameter epoch, batch_size serta memperbaiki kualitas data latih. 
-
+Kedua teknik yang diterapkan menunjukkan hasil yang menjanjikan dengan nilai RMSE yang relatif rendah, menandakan kecocokan dalam membangun sistem rekomendasi buku. Meskipun keduanya efektif, Neural Network dipilih sebagai pendekatan yang lebih unggul karena hasil RMSE-nya lebih rendah dibandingkan dengan teknik SVD. Selain itu, Neural Network memiliki potensi besar untuk ditingkatkan performanya melalui optimasi parameter seperti jumlah epoch, batch size, serta perbaikan kualitas data pelatihan. Oleh karena itu, Neural Network dinilai lebih tepat untuk digunakan dalam pengembangan lanjutan sistem rekomendasi ini.
 ## Referensi
 
-[[1](https://journal.unesa.ac.id/index.php/jpi/article/view/140)] Kasiyun, Suharmono. "Upaya meningkatkan minat baca sebagai sarana untuk mencerdaskan bangsa." (2015): 81.
-
-[[2](https://ejournal.akprind.ac.id/index.php/technoscientia/article/view/612)] Irfan, Mohammad, and Andharini Dwi Cahyani. "Sistem Rekomendasi: Buku Online Dengan Metode Collaborative Filtering." *Jurnal Teknologi Technoscientia* (2014): 076-84.
-
-[[3](https://ieeexplore.ieee.org/abstract/document/6615466)] Ba, Qilong, Xiaoyong Li, and Zhongying Bai. "Clustering collaborative filtering recommendation system based on SVD algorithm." *2013 IEEE 4th International Conference on Software Engineering and Service Science*. IEEE, 2013.
-
-[[4](https://dl.acm.org/doi/abs/10.5555/1983862.1983922)] Vassiliou, Charalampos, et al. "A recommender system framework combining neural networks & collaborative filtering." *Proceedings of the 5th WSEAS international conference on Instrumentation, measurement, circuits and systems*. 2006.
+1.  (https://journal.unesa.ac.id/index.php/jpi/article/view/140)] Kasiyun, Suharmono. "Upaya meningkatkan minat baca sebagai sarana untuk mencerdaskan bangsa." (2015): 81.
+2.  (https://ejournal.akprind.ac.id/index.php/technoscientia/article/view/612)] Irfan, Mohammad, and Andharini Dwi Cahyani. "Sistem Rekomendasi: Buku Online Dengan Metode Collaborative Filtering." *Jurnal Teknologi Technoscientia* (2014): 076-84
+3.  (https://ieeexplore.ieee.org/abstract/document/6615466)] Ba, Qilong, Xiaoyong Li, and Zhongying Bai. "Clustering collaborative filtering recommendation system based on SVD algorithm." *2013 IEEE 4th International Conference on Software Engineering and Service Science*. IEEE, 2013.
+4.  (https://dl.acm.org/doi/abs/10.5555/1983862.1983922)] Vassiliou, Charalampos, et al. "A recommender system framework combining neural networks & collaborative filtering." *Proceedings of the 5th WSEAS international conference on Instrumentation, measurement, circuits and systems*. 2006.
