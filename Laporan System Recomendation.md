@@ -11,11 +11,11 @@
 
 Pengetahuan memegang peran krusial dalam kehidupan manusia. Melalui pengetahuan, individu dapat memahami berbagai aspek dalam hidup dan meningkatkan kualitas hidup mereka. Oleh karena itu, memahami dan mempelajari ilmu pengetahuan menjadi hal yang sangat penting. Salah satu cara yang paling mudah dan efektif untuk mengakses pengetahuan adalah melalui buku. Buku menyimpan berbagai pemikiran dan informasi dari penulis yang dikemas dalam bentuk narasi, ilustrasi, maupun bentuk lainnya. Aktivitas membaca memungkinkan seseorang memahami hal-hal yang sebelumnya belum diketahui.
 
-Terdapat ungkapan bahwa buku adalah jendela dunia. Namun kenyataannya, tingkat minat baca masyarakat Indonesia tergolong sangat rendah. Berdasarkan data, indeks literasi Indonesia hanya mencapai 0,001 — artinya dari seribu orang, hanya satu yang memiliki ketertarikan tinggi terhadap aktivitas membaca [1]. Angka ini sangat jauh jika dibandingkan dengan negara-negara maju seperti Amerika Serikat (0,45) dan Singapura (0,55), yang menunjukkan tingginya budaya membaca di negara tersebut. Hal ini menjadi alarm penting bagi Indonesia untuk mendorong peningkatan minat baca.
+Terdapat ungkapan bahwa buku adalah jendela dunia. Namun kenyataannya, tingkat minat baca masyarakat Indonesia tergolong sangat rendah. Berdasarkan data, indeks literasi Indonesia hanya mencapai 0,001 — artinya dari seribu orang, hanya satu yang memiliki ketertarikan tinggi terhadap aktivitas membaca. Angka ini sangat jauh jika dibandingkan dengan negara-negara maju seperti Amerika Serikat (0,45) dan Singapura (0,55), yang menunjukkan tingginya budaya membaca di negara tersebut. Hal ini menjadi alarm penting bagi Indonesia untuk mendorong peningkatan minat baca.
 
 Salah satu hambatan utama yang dihadapi masyarakat dalam memulai kebiasaan membaca adalah kesulitan dalam menemukan buku yang sesuai dengan minat. Meski banyak pilihan buku tersedia, tanpa panduan atau rekomendasi, calon pembaca sering kali bingung menentukan pilihan. Akibatnya, motivasi membaca pun bisa cepat menghilang. Oleh karena itu, dibutuhkan sebuah sistem yang mampu membantu individu menemukan buku yang relevan dengan preferensi mereka, guna mendorong semangat membaca di kalangan masyarakat. 
 
-Salah satu solusi yang dapat dimanfaatkan untuk membantu seseorang dalam menemukan buku yang sesuai adalah dengan membangun sistem rekomendasi buku. Sistem ini bertujuan untuk menyarankan buku-buku kepada pengguna berdasarkan preferensi atau riwayat bacaan, sehingga proses pencarian buku menjadi lebih efisien dan terarah [2]. Sistem rekomendasi tersebut memanfaatkan data dari ulasan atau penilaian pengguna lain untuk menyajikan daftar buku yang kemungkinan besar akan disukai oleh pengguna baru. Dengan adanya sistem ini, diharapkan pembaca pemula dapat lebih mudah menemukan bacaan yang sesuai dengan ketertarikannya. Dalam pengembangannya, pendekatan yang digunakan adalah collaborative filtering, yaitu metode yang memanfaatkan interaksi dan perilaku pembaca lain sebagai dasar rekomendasi.
+Salah satu solusi yang dapat dimanfaatkan untuk membantu seseorang dalam menemukan buku yang sesuai adalah dengan membangun sistem rekomendasi buku. Sistem ini bertujuan untuk menyarankan buku-buku kepada pengguna berdasarkan preferensi atau riwayat bacaan, sehingga proses pencarian buku menjadi lebih efisien dan terarah. Sistem rekomendasi tersebut memanfaatkan data dari ulasan atau penilaian pengguna lain untuk menyajikan daftar buku yang kemungkinan besar akan disukai oleh pengguna baru. Dengan adanya sistem ini, diharapkan pembaca pemula dapat lebih mudah menemukan bacaan yang sesuai dengan ketertarikannya. Dalam pengembangannya, pendekatan yang digunakan adalah collaborative filtering, yaitu metode yang memanfaatkan interaksi dan perilaku pembaca lain sebagai dasar rekomendasi.
 
 ## Business Understanding
 
@@ -47,37 +47,12 @@ SVD merupakan metode faktorisasi matriks yang digunakan untuk mereduksi ukuran d
   
 ## Data Understanding
 
-Dataset yang digunakan dalam pengembangan sistem rekomendasi buku diperoleh dari Kaggle [**Book Recommendation Dataset**](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset). Dataset ini mencakup tiga jenis data utama: data **buku (books), data pengguna (users), dan data penilaian (ratings)**. Secara keseluruhan, terdapat 278.858 entri pengguna dengan total 1.149.780 penilaian terhadap 271.360 buku. Dataset ini terdiri dari tiga file berformat comma-separated values (CSV), yaitu ```Books.csv```, ```Ratings.csv```, dan ```Users.csv```.
+Dataset yang digunakan dalam pengembangan sistem rekomendasi buku diperoleh dari Kaggle [**Book Recommendation Dataset**](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset). Dataset ini mencakup tiga jenis data utama: data **buku (books), data pengguna (users), dan data penilaian (ratings)**. Secara keseluruhan, terdapat 1.149.780 penilaian dan terhadap 271.360 buku. Dataset ini terdiri dari dua file berformat comma-separated values (CSV), yaitu ```Books.csv```dan ```Ratings.csv```.
 
 Penjelasan masing-masing file dalam dataset ini adalah sebagai berikut:
 
 * ```Books.csv```: Berisi data mengenai buku-buku yang diperoleh dari Amazon Web Services, mencakup informasi detail seperti ISBN, Judul Buku, Penulis Buku, Tahun Terbit, Penerbit dan URL Gambar S
 * ```Ratings.csv```: Menyajikan data penilaian yang diberikan oleh pengguna terhadap buku dengan skala 0 hingga 10, di mana nilai yang lebih tinggi menunjukkan tingkat apresiasi yang lebih besar terhadap buku tersebut.
-
-* ```Users.csv```: Memuat informasi tentang para pembaca, termasuk ID pengguna yang telah dianonimkan serta data demografi seperti lokasi dan usia.
-  
-Berdasarkan eksplorasi awal menggunakan .info() dan .isnull().sum() dari masing-masing DataFrame, ditemukan kondisi missing value sebagai berikut:
-
-```**Books.csv:**```
-
-* ```Book-Author```: 1 nilai kosong
-
-* ```Year-Of-Publication```: 0 nilai kosong
-
-* ```Publisher```: 2 nilai kosong
-
-* Kolom gambar (```Image-URL-S```, ```Image-URL-M```, ```Image-URL-L```) tidak memiliki nilai kosong.
-
-```**Ratings.csv:**```
-
-Tidak terdapat missing value pada kolom manapun.
-
-**```Users.csv:```**
-
-* ```Age```: Mengandung sejumlah nilai kosong dan nilai yang tidak valid (misalnya, usia < 5 atau > 100).
-
-* ```Location```: Tidak ada missing value, namun format lokasi tidak konsisten di beberapa entri.
-
 
 Fitur pada masing-masing data:
 Fitur pada Data Books:
@@ -98,13 +73,6 @@ Fitur pada Data Books:
 
 * ```Image-URL-L```: URL gambar sampul buku ukuran besar (dari Amazon).
 
-**Fitur pada Data Users:**
-
-* ```User-ID```: Identifikasi unik pembaca dalam bentuk bilangan bulat.
-
-* ```Location```: Lokasi tempat tinggal pengguna.
-
-* ```Age```: Usia pengguna.
 
 **Fitur pada Data Ratings:**
 
@@ -113,6 +81,65 @@ Fitur pada Data Books:
 * ```ISBN```: Kode unik dari buku yang dinilai.
 
 * ```Book-Rating```: Skor penilaian terhadap buku, dengan rentang 0 hingga 10. Nilai 0 menunjukkan bahwa pengguna belum memberikan rating.
+
+Berdasarkan eksplorasi awal menggunakan .info() sebagai berikut: 
+* **```Books.csv```**
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 271360 entries, 0 to 271359
+Data columns (total 8 columns):
+ #   Column               Non-Null Count   Dtype 
+---  ------               --------------   ----- 
+ 0   ISBN                 271360 non-null  object
+ 1   Book-Title           271360 non-null  object
+ 2   Book-Author          271358 non-null  object
+ 3   Year-Of-Publication  271360 non-null  object
+ 4   Publisher            271358 non-null  object
+ 5   Image-URL-S          271360 non-null  object
+ 6   Image-URL-M          271360 non-null  object
+ 7   Image-URL-L          271357 non-null  object
+dtypes: object(8)
+memory usage: 16.6+ MB
+Setelah mengeksekusi kode di atas, dapat dilihat bahwa seluruh kolom pada dataset Books.csv memiliki tipe yang berupa data object. Ada hal unik yang didapati ketika menjalankan kode di atas, dapat dilihat bahwa kolom Year-Of-Publication bertipe data object sedangkan tahun publikasi umumnya bertipe data integer, oleh karena itu perlu adanya perbaikan pada tipe data.
+Hasil Perbaikan tipe data
+ISBN                   object
+Book-Title             object
+Book-Author            object
+Year-Of-Publication     int64
+Publisher              object
+Image-URL-S            object
+Image-URL-M            object
+Image-URL-L            object
+dtype: object
+
+* **```Rantings```**
+  <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1149780 entries, 0 to 1149779
+Data columns (total 3 columns):
+ #   Column       Non-Null Count    Dtype 
+---  ------       --------------    ----- 
+ 0   User-ID      1149780 non-null  int64 
+ 1   ISBN         1149780 non-null  object
+ 2   Book-Rating  1149780 non-null  int64 
+dtypes: int64(2), object(1)
+memory usage: 26.3+ MB
+Setelah menjalankan kode di atas, dapat dilihat bahwa kolom User-ID dan Book-Rating pada dataset Ratings.csv memiliki tipe data integer sedangkan kolom ISBN bertipe object.
+
+
+Berdasarkan .isnull().sum() dari masing-masing DataFrame, ditemukan kondisi missing value sebagai berikut:
+```**Books.csv:**```
+
+* ```Book-Author```: 2 nilai kosong
+
+* ```Year-Of-Publication```: 0 nilai kosong
+
+* ```Publisher```: 2 nilai kosong
+
+* Kolom gambar (```Image-URL-S```, ```Image-URL-M```, ```Image-URL-L```) tidak memiliki nilai kosong.
+
+```**Ratings.csv:**```
+
+Tidak terdapat missing value pada kolom manapun.
+
 
 
 ### Univariate Analysis
