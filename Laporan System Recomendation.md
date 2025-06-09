@@ -209,7 +209,7 @@ SVD bekerja dengan merepresentasikan interaksi antara pengguna dan item dalam be
 Latent factor sendiri merupakan fitur tersembunyi yang mengungkap karakteristik atau pola tertentu dari buku dan preferensi pengguna, yang dalam proyek ini dilandaskan pada nilai Book-Rating. Melalui pendekatan ini, sistem dapat memetakan hubungan kompleks antara pembaca dan buku secara lebih efisien, sekalipun sebagian besar data penilaian bersifat spars (jarang).
 
 
-##**X = USV**T
+## **X = USV**T
 
   Kelebihan dan kekurangan SVD dijelaskan dibawah ini :
 
@@ -220,24 +220,20 @@ Latent factor sendiri merupakan fitur tersembunyi yang mengungkap karakteristik 
     * Membutuhkan resource yang lebih besar untuk komputasi dataset yang sangat besar
     * Sensitif terhadap data *outliers*
 
-  
+|          ISBN    |   Book-Title                                     |	Book-Author   	|prediction_rate |
+|-------|----------|--------------------------------------------------|-----------------|----------------|-
+|0	    |034545104X|	Flesh Tones: A Novel	                          |M. J. Rose       |	0.284154       |
+|766517	|0671665871|	GOING HOME	                                    |Danielle Steel   |	0.284154       |
+|766523	|0671690582|	WHISPER OF DEATH : WHISPER OF DEATH	            |Christopher Pike	| 0.284154       |
+|766522	|0671690094|	ANNE FRANK: DIARY OF A YOUNG GIRL	              |Anne Frank       | 0.284154       |
+|766521	|067167630X|	BOOMER	                                        |Charles Taylor   |	0.284154       |
+|766520	|067167465X|	BEST OF ENEMIES (NANCY DREW HARDY BOY SUPERMYS..|Carolyn Keene	  | 0.284154       |
+|766519	|0671673513|	The SILENCE OF THE LAMBS	Thomas Harris	        |Thomas Harris    | 0.284154       |
+|766518	|0671670662|	WEB OF DREAMS (Casteel Saga (Paperback))	      |V.C. Andrews	    | 0.284154       |
+|766516	|0671664549|	Happy Birthday, Moon (Moonbear)	                |Frank Asch       |	0.284154       |
+|766525	|0671692550|	The Tale of Peter Rabbit (Sticker Book)	        |Beatrix Potter	  | 0.284154       |
+----------------------------------------------------------------------------------------------------------
 
-  Hasil dari prediksi  dapat dilihat di Tabel 4.
-
-  Tabel 4. Daftar 8 teratas rekomendasi buku untuk pembaca dengan User-ID 276729 dengan teknik SVD
-
-  | ISBN       | Book-Title                                                   | Book-Author      |
-  | ---------- | ------------------------------------------------------------ | ---------------- |
-  | 034545104X | Flesh Tones: A Novel                                         | M. J. Rose       |
-  | 0671665871 | GOING HOME                                                   | Danielle Steel   |
-  | 0671690582 | WHISPER OF DEATH : WHISPER OF DEATH                          | Christopher Pike |
-  | 0671690094 | ANNE FRANK: DIARY OF A YOUNG GIRL                            | Anne Frank       |
-  | 067167630X | BOOMER                                                       | Charles Taylor   |
-  | 067167465X | BEST OF ENEMIES (NANCY DREW HARDY BOY SUPERMYSTERY 9) : BEST OF ENEMIES (Nancy Drew and Hardy Boys Supermystery) | Carolyn Keene    |
-  | 0671673513 | The SILENCE OF THE LAMBS                                     | Thomas Harris    |
-  | 0671670662 | WEB OF DREAMS (Casteel Saga (Paperback))                     | V.C. Andrews     |
-
-  
 
 * *Collaborative filtering* dengan teknik *Neural Network*. Pada proyek ini implementasi *collaborative filtering* dengan teknik Neural Network menggunakan bantuan Keras model yang terinspirasi dari *class* [RecommenderNet](https://keras.io/examples/structured_data/collaborative_filtering_movielens/). Model *Neural Network* yang digunakan menggunakan BinaryCrossentropy sebagai *loss function*, Adam (*Adaptive Moment Estimation*) sebagai *optimizer* dan RMSE (*Root Mean Square Error*) sebagai matriks evaluasi. Hyperparameter yang digunakan adalah epoch sebesar 8 dan batch_size sebesar 500. Nilai ini didapatkan dengan cara *trial and error.*
 
@@ -256,22 +252,27 @@ Latent factor sendiri merupakan fitur tersembunyi yang mengungkap karakteristik 
 
   
 
-  Hasil dari prediksi  dapat dilihat di Tabel 5.
+  Hasil dari prediksi  dapat dilihat di Tabel 2.
 
-  Tabel 5. Daftar 8 teratas rekomendasi buku untuk pembaca dengan User-ID 276729 dengan teknik *Neural Network*
-
-  | ISBN       | Book-Title                                                   | Book-Author        |
-  | ---------- | ------------------------------------------------------------ | ------------------ |
-  | 0737020601 | Desserts: Delicious Desserts from the 50's (Retro Recipes)   | Susan Wolk         |
-  | 0486229777 | Best Ghost Stories of Algernon Blackwood                     | Algernon Blackwood |
-  | 0340670363 | How to Win at Horse Racing (Teach Yourself: How to Win)	Belinda Levez | Belinda Levez      |
-  | 1864364408 | The Last Mortal Generation: How Science Will Alter Our Lives in the 21st Century | Damien Broderick   |
-  | 0824521056 | Running from the Devil: A Memoir of a Boy Possessed          | Steve Kissing      |
-  | 0765305534 | Louisiana Lament (Talba Wallis)	Julie Smith               | Julie Smith        |
-  | 0521576814 | The Functional Approach to Programming	Guy Cousineau      | Guy Cousineau      |
-  | 0425089835 | Nice Girls Do	Irene Kassorla                              | Irene Kassorla     |
+  Tabel 2.Daftar 10 teratas rekomendasi buku untuk pembaca dengan User-ID 276729 dengan teknik **Neural Network**
+  	
+|       | ISBN	   |        Book-Title	                                |          Book-Author     |
+|-------|--------  | ---------------------------------------------------| ------------------------ |
+|27937  |0452280362|	Dreaming Southern	                                |     Linda Bruckheimer    |
+|44011  |0964535203|Kombucha: How to and What It's All About            |	    Alana Pascal         |
+|55318  |0805047174|Stopping for Death: Poems of Death and Loss         |	    Carol Ann Duffy      |
+|78939  |1582341141|Mangoes and Quince: A Novel	                        |     Carol Field          |
+|146801 |0671646877|	Scene of the Crime (The Hardy Boys Casefiles, ...	|     Franklin Dixon       |
+|150467 |0843946474|	Keeper of My Heart	                              |     Penelope Neri        |
+|168117 |0932592104|The Klutz Book of Knots: How to Tie the World'...   |	    John Cassidy         |
+|172097 |0471527270|	Neanderthals at Work: How People and Politics ...	|     Albert J. Bernstein  |
+|214910 |0451197348|	A Cat on Stage Left: An Alice Nestleton Myster... |     Lydia Adamson        |
+|236975 |0020955707|	GOLDEN BOUGH	                                    |     James G, Sr. Fraser  |
+----------------------------------------------------------------------------------------------------
 
   
+
+
 
 ## Evaluation
 
