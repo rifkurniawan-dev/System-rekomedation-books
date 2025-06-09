@@ -124,16 +124,24 @@ Hasil Perbaikan tipe data
 
 
 * **```Ratings```**
+  
   <class 'pandas.core.frame.DataFrame'>
+  
 RangeIndex: 1149780 entries, 0 to 1149779
+
 Data columns (total 3 columns):
- #   Column       Non-Null Count    Dtype 
----  ------       --------------    ----- 
- 0   User-ID      1149780 non-null  int64 
- 1   ISBN         1149780 non-null  object
- 2   Book-Rating  1149780 non-null  int64 
+
+|  #  |  Column       |   Non-Null Count   |    Dtype    | 
+|-----|---------------|--------------------|-------------|  
+|  0  |  User-ID      |  1149780 non-null  |   int64     | 
+|  1  |  ISBN         |  1149780 non-null  |   object    | 
+|  2  |  Book-Rating  |  1149780 non-null  |   int64     |
+----------------------------------------------------------
+
 dtypes: int64(2), object(1)
+
 memory usage: 26.3+ MB
+
 Setelah menjalankan kode di atas, dapat dilihat bahwa kolom User-ID dan Book-Rating pada dataset Ratings.csv memiliki tipe data integer sedangkan kolom ISBN bertipe object.
 
 
