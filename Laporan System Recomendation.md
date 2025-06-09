@@ -229,28 +229,28 @@ Sebaliknya, ditemukan juga beberapa buku dengan rata-rata rating terendah yaitu 
 * Pokemon: The Official Collector's Sticker Book
 * Til the Fat Lady Sings
   
-## Data Preprocessing
+## Data Preparation.
 
-Sebelum melakukan tahap data preparation, dataset perlu melalui proses pengolahan awal. Hal ini disebabkan karena data masih tersebar dalam tiga file berbeda berformat **comma separated values (CSV)**. Adapun langkah-langkah yang dilakukan dalam tahap ini meliputi:
+Sebelum melakukan tahap *data preparation*, dataset perlu melalui proses pengolahan awal. Hal ini disebabkan karena data masih tersebar dalam dua file berbeda berformat **comma separated values (CSV)**. Adapun langkah-langkah yang dilakukan dalam tahap ini meliputi:
 
-* Penggabungan Dataset. Ketiga sumber data, yaitu ```Books.csv```, ```Ratings.csv```, dan ```Users.csv```, masih terpisah. Oleh karena itu, dilakukan penggabungan antara Books.csv dan Ratings.csv menggunakan variabel ISBN sebagai kunci unik setiap buku. Sementara itu, ```Users.csv``` tidak digabungkan karena sistem rekomendasi yang dikembangkan tidak memanfaatkan data umur maupun informasi demografis pengguna.
+* **Penggabungan Dataset.** Kedua sumber data, yaitu `Books.csv` dan `Ratings.csv`, masih terpisah. Oleh karena itu, dilakukan penggabungan antara keduanya menggunakan variabel `ISBN` sebagai kunci unik untuk setiap buku.
 
-* Penghapusan Kolom Tidak Relevan. Setelah penggabungan, masih terdapat beberapa kolom yang tidak diperlukan dalam proses pembuatan model. Untuk menyederhanakan dan mengurangi dimensi data, hanya kolom User-ID, ISBN, dan Book-Rating yang dipertahankan, sementara kolom lainnya dihapus.
+* **Penghapusan Kolom Tidak Relevan.** Setelah penggabungan, masih terdapat beberapa kolom yang tidak diperlukan dalam proses pembuatan model. Untuk menyederhanakan dan mengurangi dimensi data, hanya kolom `User-ID`, `ISBN`, dan `Book-Rating` yang dipertahankan, sementara kolom lainnya dihapus seperti `Book-Title`, `Book-Author`, `Year-Of-Publication`, `Publisher`, dan URL gambar.
 
+  Sebelum kolom `Year-Of-Publication` dihapus, telah dilakukan proses pembersihan terhadap nilai-nilai tidak valid yang muncul pada kolom tersebut, seperti `'DK Publishing Inc'` dan `'Gallimard'`. Nilai-nilai tersebut dihapus, lalu tipe data kolom diubah menjadi bilangan bulat (`integer`) agar data menjadi konsisten. Proses ini dilakukan pada tahap *Data Understanding* sebelum data diproses lebih lanjut.
 
-## Data Preparation
-
-Langkah-langkah yang dilakukan untuk menyiapkan data (*data preparation*) adalah sebagai berikut :
+Langkah-langkah yang dilakukan untuk menyiapkan data (*Data Preparation*) selanjutnya adalah sebagai berikut:
 
 
 * **Penanganan Data Kosong (Missing Value)**.
 
-Dalam dataset yang digunakan pada proyek ini, tidak ditemukan adanya nilai yang hilang, sehingga tidak diperlukan langkah khusus untuk menangani **missing value**.
+Pada dataset `ratings`, tidak ditemukan adanya nilai yang hilang, sehingga tidak diperlukan penanganan khusus pada tahap ini.
+
+Sementara itu, pada dataset `books`, terdapat masing-masing 2 nilai kosong pada kolom `Book-Author` dan `Publisher`. Namun, kolom-kolom ini tidak digunakan dalam proses pembangunan model rekomendasi, sehingga dihapus pada tahap pembersihan data bersama dengan atribut lain yang dianggap tidak relevan. Dengan demikian, missing value tersebut tidak memengaruhi proses pemodelan dan tidak perlu ditangani secara eksplisit.
 
 * **Proses Encoding**.
 
 Dilakukan proses encoding, yaitu mengubah format data menjadi bentuk lain yang lebih mudah diproses oleh sistem. Pada tahap ini, variabel ```ISBN``` dan ```User-ID``` diubah ke dalam format indeks bilangan bulat ```integer``` untuk memudahkan proses pelatihan model di tahap berikutnya.
-
 
 * **Normalisasi Variabel.**
 
@@ -293,20 +293,20 @@ Hasil dari prediksi  dapat dilihat di Tabel 1.
 
   Tabel 1.Daftar 10 teratas rekomendasi buku untuk pembaca dengan User-ID 276729 dengan teknik **SVD**
 
-|        |    ISBN    |   Book-Title                                    |	Book-Author   	  | prediction_rate |
-|--------|------------|-------------------------------------------------|-------------------|-----------------|
-| 0	     | 034545104X |	Flesh Tones: A Novel	                          |  M. J. Rose       |	0.284154        |
-| 766517 | 0671665871 |	GOING HOME	                                    |  Danielle Steel   |	0.284154        |
-| 766523 | 0671690582 |	WHISPER OF DEATH : WHISPER OF DEATH	            |  Christopher Pike	| 0.284154        |
-| 766522 | 0671690094 |	ANNE FRANK: DIARY OF A YOUNG GIRL	              |  Anne Frank       | 0.284154        |
-| 766521 | 067167630X |	BOOMER	                                        |  Charles Taylor   |	0.284154        |
-| 766520 | 067167465X |	BEST OF ENEMIES (NANCY DREW HARDY BOY SUPERMYS. |  Carolyn Keene	  | 0.284154        |
-| 766519 | 0671673513 |	The SILENCE OF THE LAMBS	Thomas Harris	        |  Thomas Harris    | 0.284154        |
-| 766518 | 0671670662 |	WEB OF DREAMS (Casteel Saga (Paperback))	      |  V.C. Andrews	    | 0.284154        |
-| 766516 | 0671664549 |	Happy Birthday, Moon (Moonbear)	                |  Frank Asch       |	0.284154        |
-| 766525 | 0671692550 |	The Tale of Peter Rabbit (Sticker Book)	        |  Beatrix Potter	  | 0.284154        |
----------------------------------------------------------------------------------------------------------------
+|	       |  ISBN	      | Book-Title	                                    |  Book-Author	       | prediction_rate |
+|--------|--------------|-------------------------------------------------|----------------------|-----------------|
+| 0	     |  034545104X	| Flesh Tones: A Novel	                          |   M. J. Rose	       | 0.283867        |
+| 766517 |	0671665871	| GOING HOME	                                    |   Danielle Steel	   | 0.283867        |
+| 766523 |	0671690582	| WHISPER OF DEATH : WHISPER OF DEATH	            |   Christopher Pike	 | 0.283867        |
+| 766522 |	0671690094	| ANNE FRANK: DIARY OF A YOUNG GIRL	              |   Anne Frank	       | 0.283867        |
+| 766521 |	067167630X	| BOOMER	                                        |   Charles Taylor	   | 0.283867        |
+| 766520 |	067167465X	| BEST OF ENEMIES (NANCY DREW HARDY BOY SUPERMYS..|   Carolyn Keene	     | 0.283867        |
+| 766519 |	0671673513	| The SILENCE OF THE LAMBS	                      |   Thomas Harris	     | 0.283867        |
+| 766518 |  0671670662	| WEB OF DREAMS (Casteel Saga (Paperback))	      |   V.C. Andrews       | 0.283867        |
+| 766516 |	0671664549	| Happy Birthday, Moon (Moonbear)	                |   Frank Asch	       | 0.283867        |
+| 766525 |	0671692550	| The Tale of Peter Rabbit (Sticker Book)         |	  Beatrix Potter     | 0.283867        |
 
+  
 
 * *Collaborative filtering* dengan teknik *Neural Network*. Pada proyek ini implementasi *collaborative filtering* dengan teknik Neural Network menggunakan bantuan Keras model yang terinspirasi dari *class* [RecommenderNet](https://keras.io/examples/structured_data/collaborative_filtering_movielens/). Model *Neural Network* yang digunakan menggunakan BinaryCrossentropy sebagai *loss function*, Adam (*Adaptive Moment Estimation*) sebagai *optimizer* dan RMSE (*Root Mean Square Error*) sebagai matriks evaluasi. Hyperparameter yang digunakan adalah epoch sebesar 4 dan batch_size sebesar 500. Nilai ini didapatkan dengan cara *trial and error.*
 
