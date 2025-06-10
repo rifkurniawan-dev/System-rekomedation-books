@@ -81,7 +81,7 @@ Namun data kelas yang di perlukan pada projek system rekomendasi berupa file ```
 
 ## **Gathering Data**
 
-Pada projek ini, kita hanya akan menggunakan dataframe ```book```, ```rating``` dan ```users```. melihat jumlah masing-masing dataframe ketiganya
+Pada projek ini, kita hanya akan menggunakan dataframe ```book``` dan ```rating```. melihat jumlah masing-masing dataframe keduanya
 """
 
 #melihat jumlah kolom dan baris dari masing-masing dataframe
