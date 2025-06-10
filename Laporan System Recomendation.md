@@ -186,6 +186,7 @@ Dilihat dari Gambar 2 didapatkan informasi sebagai berikut :
 
 -Selanjutnya, dilakukan analisis terhadap kolom Publisher. Ditemukan bahwa penerbit Harlequin menjadi penerbit dengan jumlah buku terbanyak dalam dataset, yaitu lebih dari 7000 judul buku. Hal ini mengindikasikan bahwa Harlequin merupakan salah satu penerbit paling aktif.
 Visualisasi bar chart menunjukkan 20 penerbit teratas, yang sebagian besar terdiri dari penerbit komersial besar dan mapan dalam industri penerbitan.
+
 **Tahun Terbit Buku**
 
 Gambar 3. Tahunn terbit buku teratas
@@ -198,6 +199,7 @@ Distribusi terhadap Year-Of-Publication menunjukkan bahwa tahun 2002 merupakan t
 Hal ini dapat disebabkan oleh meningkatnya digitalisasi dan distribusi data buku yang lebih masif pada awal 2000-an.
 
 **Rating Buku**
+
 Gambar 4. Visualisasi Frekuensi Jumlah Rating 
 
 ![image](https://github.com/user-attachments/assets/e1a6789a-47cc-438a-b856-9c196baaf3c9)
