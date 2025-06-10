@@ -363,10 +363,10 @@ Tabel 3. Tabel Hasil RMSE (*Root Mean Squared Error*) tiap model
 
 |                | test     |
 | -------------- | -------- |
-| SVD            | 0.344028 |
-| Neural Network | 0.439593 |
+| SVD            | 0.343696 |
+| Neural Network | 0.439319 |
 
-Dari Tabel 3 diketahui bahwa nilai RMSE yang dihasilkan oleh metode SVD lebih rendah dibandingkan dengan metode Neural Network, yakni sebesar 0.344028 untuk SVD dan 0.439593 untuk Neural Network. Nilai tersebut mengindikasikan bahwa SVD memiliki kinerja prediksi yang lebih akurat dalam sistem rekomendasi buku berbasis collaborative filtering. Rentang nilai RMSE antara 0.3 hingga 0.4 masih dianggap cukup baik dalam konteks sistem rekomendasi. Meskipun performa Neural Network saat ini belum melampaui SVD, metode ini tetap memiliki peluang untuk ditingkatkan melalui penyempurnaan seperti tuning hyperparameter, modifikasi arsitektur jaringan, serta perbaikan kualitas data latih. Oleh karena itu, pendekatan Neural Network tetap relevan dan dapat dipertimbangkan untuk pengembangan sistem rekomendasi di tahap berikutnya.
+Dari Tabel 3 diketahui bahwa nilai RMSE yang dihasilkan oleh metode SVD lebih rendah dibandingkan dengan metode Neural Network, yakni sebesar 0.343696 untuk SVD dan0.439319 untuk Neural Network. Nilai tersebut mengindikasikan bahwa SVD memiliki kinerja prediksi yang lebih akurat dalam sistem rekomendasi buku berbasis collaborative filtering. Rentang nilai RMSE antara 0.3 hingga 0.4 masih dianggap cukup baik dalam konteks sistem rekomendasi. Meskipun performa Neural Network saat ini belum melampaui SVD, metode ini tetap memiliki peluang untuk ditingkatkan melalui penyempurnaan seperti tuning hyperparameter, modifikasi arsitektur jaringan, serta perbaikan kualitas data latih. Oleh karena itu, pendekatan Neural Network tetap relevan dan dapat dipertimbangkan untuk pengembangan sistem rekomendasi di tahap berikutnya.
 ## Kesimpulan
 
 Melalui serangkaian tahapan yang telah dilakukan, berhasil dikembangkan sebuah sistem rekomendasi buku berbasis collaborative filtering dengan memanfaatkan dua pendekatan, yaitu teknik SVD dan Neural Network. Sistem ini menggunakan data rating dari pengguna lain sebagai dasar dalam memberikan rekomendasi, sehingga buku-buku yang disarankan merupakan buku yang dianggap menarik oleh pembaca sebelumnya. Harapannya, dengan menyajikan rekomendasi yang relevan dan menarik, sistem ini dapat mendorong minat pembaca baru untuk mulai membaca, serta turut berkontribusi dalam meningkatkan budaya literasi di Indonesia.
